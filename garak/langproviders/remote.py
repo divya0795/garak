@@ -200,6 +200,7 @@ class GoogleTranslator(LangProvider):
         if hasattr(self, "api_key"):
             try:
                 auth_args = [self.api_key]
+                auth_kwargs = {}
                 if self.project_id is not None:
                     auth_kwargs = {"project": self.project_id}
                 self.client = translate.Client.from_service_account_json(
